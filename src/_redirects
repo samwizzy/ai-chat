@@ -1,2 +1,2 @@
-/get http://api.brainshop.ai/:splat
+/get/* http://api.brainshop.ai/:splat 200!
 /* /index.html 200
