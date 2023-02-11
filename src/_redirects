@@ -1,0 +1,2 @@
+/get http://api.brainshop.ai/:splat
+/* /index.html 200

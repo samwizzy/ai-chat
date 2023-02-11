@@ -1,7 +1,7 @@
 
 [[redirects]]
   from = "/get"
-  to = "http://api.brainshop.ai"
+  to = "http://api.brainshop.ai/:splat"
   status = 200
 
 [[redirects]]
