@@ -1,0 +1,30 @@
+.input {
+  position: relative;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+
+  .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.messages {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  min-height: 200px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.user-message {
+  @apply ml-auto bg-amber-200 text-gray-600;
+}

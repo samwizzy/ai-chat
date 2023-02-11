@@ -1,0 +1,6 @@
+{
+  "/get": {
+    "target": "http://api.brainshop.ai",
+    "secure": false
+  }
+}

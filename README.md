@@ -6,6 +6,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+To make api request from a different origin would throw a CORS policy, below are ways to fix this:
+
+```js
+ng start --proxy-config proxy.conf.json
+```
+
+### OR
+
+You can add adjust the proxy configuration in your angular.json file, locate the serve section, and add this like it was done below:
+
+```js
+"serve": {
+    ...
+    "options": {
+        "browserTarget": "ai_chat:build",
+        "proxyConfig": "proxy.conf.json"
+    },
+    ...
+}
+```
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
