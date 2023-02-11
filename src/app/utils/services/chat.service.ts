@@ -17,7 +17,7 @@ export class ChatService {
     const headers = new HttpHeaders({ 'content-type': 'application/json' });
 
     return this.http.get<HttpResponse>(
-      `/get?bid=${environment.bid}&key=${environment.apiKey}&uid=${this.userId}&msg=${msg}`,
+      `${environment.baseUrl}?bid=${environment.bid}&key=${environment.apiKey}&uid=${this.userId}&msg=${msg}`,
       { headers }
     );
   }

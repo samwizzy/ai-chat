@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  baseUrl: '/get',
   apiKey: 'KF4ZOM2SumwSphik',
   bid: '172589',
 };
