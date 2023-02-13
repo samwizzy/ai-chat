@@ -6,12 +6,15 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 export class ScrollToBottomDirective {
   @HostListener('window:load') scrolling() {
     this.onWindowLoad();
-    console.log('i just scrolled');
   }
 
   constructor(private elem: ElementRef, private renderer: Renderer2) {}
 
   onWindowLoad() {
-    this.elem.nativeElement.scrollTop = this.elem.nativeElement.scrollHeight;
+    this.renderer.setStyle(
+      this.elem.nativeElement,
+      'scrollTop',
+      this.elem.nativeElement.scrollHeight
+    );
   }
 }

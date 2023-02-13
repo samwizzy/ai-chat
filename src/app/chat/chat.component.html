@@ -1,12 +1,20 @@
 <main class="max-w-4xl mx-auto sm:px-4 px-8 py-8">
-  <button (click)="refresh()" aria-label="refresh chat">
-    <img
-      class="w-6 h-6"
-      src="assets/images/refresh.svg"
-      alt="refresh"
-      title="refresh chat"
-    />
-  </button>
+  <section class="flex justify-between py-3">
+    <button (click)="refresh()" aria-label="refresh chat">
+      <img
+        class="w-6 h-6 animate-bounce"
+        src="assets/images/restart.svg"
+        alt="refresh"
+        title="refresh chat"
+      />
+    </button>
+
+    <button
+      class="border border-amber-600 text-amber-600 px-4 py-1 rounded-md text-sm uppercase font-sans transition-all duration-300 ease-linear hover:px-5"
+    >
+      Logout
+    </button>
+  </section>
 
   <section class="messages mb-6 rounded-md space-y-4 shadow-sm" #scrollToBottom>
     <ng-container *ngIf="(chats$ | async)?.length">
@@ -33,7 +41,7 @@
       <button
         type="submit"
         [disabled]="!message.length"
-        class="flex w-16 h-full justify-center items-center border-l btn"
+        class="flex w-16 h-full justify-center items-center border-l btn focus:animate-ping"
       >
         <img class="h-8" src="/assets/images/paper-send.svg" alt="send" />
       </button>

@@ -21,10 +21,18 @@ form {
   border: 1px solid #ddd;
   padding: 1rem;
   min-height: 200px;
-  max-height: 500px;
+  max-height: 720px;
   overflow-y: auto;
+  background: url(/assets/images/bg1.jpg) repeat fixed;
+  background-size: contain;
 }
 
 .user-message {
   @apply ml-auto bg-amber-200 text-gray-600;
+}
+
+@media screen and (max-width: 768px) {
+  .messages {
+    min-height: 526px;
+  }
 }

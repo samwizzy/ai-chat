@@ -13,10 +13,6 @@ import { ChatComponent } from './chat/chat.component';
 import { StoreModule } from '@ngrx/store';
 import { chatReducer } from './state/chat.reducer';
 
-export function isInDevMode(): boolean {
-  return isDevMode();
-}
-
 @NgModule({
   declarations: [AppComponent, ChatComponent],
   imports: [
