@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpResponse } from '../modals/message';
+import { ChatResponse } from '../modals/message';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -13,10 +13,10 @@ export class ChatService {
 
   constructor(private http: HttpClient) {}
 
-  sendMessage(msg: string): Observable<HttpResponse> {
+  sendMessage(msg: string): Observable<ChatResponse> {
     const headers = new HttpHeaders({ 'content-type': 'application/json' });
 
-    return this.http.get<HttpResponse>(
+    return this.http.get<ChatResponse>(
       `${environment.baseUrl}?bid=${environment.bid}&key=${environment.apiKey}&uid=${this.userId}&msg=${msg}`,
       { headers }
     );

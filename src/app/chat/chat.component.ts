@@ -7,8 +7,8 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { sendMessage, clearChats } from '../state/chat.actions';
-import { delay, Observable } from 'rxjs';
-import { HttpResponse, IMessages } from '../utils/modals/message';
+import { delay, Observable, of } from 'rxjs';
+import { ChatResponse, IMessages } from '../utils/modals/message';
 import { ChatService } from '../utils/services/chat.service';
 import { fadeIn } from '../utils/triggers/fadeIn';
 
@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   userId = this.chatService.userId;
   botId = this.chatService.botId;
 
-  chats$!: Observable<IMessages[]>;
+  chats$: Observable<IMessages[]> = of([]);
   message: string = '';
   @ViewChild('scrollToBottom') private scrollContainer!: ElementRef;
 
@@ -34,6 +34,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
     this.scrollToBottom();
     this.chats$ = this.store.select('chat');
+    this.store.select('chat').subscribe((chatState) => {});
   }
 
   ngAfterViewChecked(): void {
@@ -55,7 +56,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     this.message = '';
   }
 
-  trackByFn(index: number, message: HttpResponse) {
+  trackByFn(index: number, message: ChatResponse) {
     return message.cnt + index;
   }
 

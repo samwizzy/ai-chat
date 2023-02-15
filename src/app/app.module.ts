@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 
 import { StoreModule } from '@ngrx/store';
-import { chatReducer } from './state/chat.reducer';
+import rootReducer from './state/rootReducer';
 
 @NgModule({
   declarations: [AppComponent, ChatComponent],
@@ -22,7 +22,7 @@ import { chatReducer } from './state/chat.reducer';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot({ chat: chatReducer }),
+    StoreModule.forRoot(rootReducer),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       //logOnly: !isDevMode(), // Restrict extension to log-only mode
