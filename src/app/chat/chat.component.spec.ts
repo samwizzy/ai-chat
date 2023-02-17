@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
@@ -82,10 +83,19 @@ describe('ChatComponent', () => {
   });
 
   it('should have an empty input', () => {
-    let inputEl = compiled.querySelector('.input') as HTMLInputElement;
+    let inputEl = compiled.querySelector('.input-el') as HTMLInputElement;
     let btnEl = compiled.querySelector('.btn') as HTMLButtonElement;
 
     expect(inputEl?.value?.length).toEqual(0);
     expect(btnEl?.disabled).toBeTruthy();
+  });
+
+  it('should not have an empty input', () => {
+    let btnEl = compiled.querySelector('.btn') as HTMLButtonElement;
+
+    component.message = 'Hello';
+
+    fixture.detectChanges();
+    expect(btnEl?.disabled).toBeFalsy();
   });
 });
