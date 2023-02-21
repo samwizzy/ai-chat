@@ -3,6 +3,10 @@
   padding: 8px;
   width: 100%;
   box-sizing: border-box;
+
+  &::placeholder {
+    font-family: sans-serif;
+  }
 }
 
 form {

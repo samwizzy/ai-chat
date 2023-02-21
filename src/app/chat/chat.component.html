@@ -30,13 +30,14 @@
   </section>
 
   <section class="shadow-sm">
-    <form class="rounded-lg" (ngSubmit)="sendMessage()">
+    <form class="rounded-full" (ngSubmit)="sendMessage()">
       <input
         type="text"
         [(ngModel)]="message"
         name="message"
         autofocus
-        class="input-el rounded-lg focus:outline-none"
+        class="input w-full rounded-2xl focus:outline-none"
+        placeholder="Type message..."
       />
       <button
         type="submit"

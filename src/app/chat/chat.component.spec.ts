@@ -56,6 +56,7 @@ describe('ChatComponent', () => {
     expect(
       compiled.querySelector('.logout')?.textContent?.toLowerCase()
     ).toContain('logout');
+    expect(de.query(By.css('.logout')));
   });
 
   it('should contain no messages', (done) => {
@@ -83,7 +84,7 @@ describe('ChatComponent', () => {
   });
 
   it('should have an empty input', () => {
-    let inputEl = compiled.querySelector('.input-el') as HTMLInputElement;
+    let inputEl = compiled.querySelector('.input') as HTMLInputElement;
     let btnEl = compiled.querySelector('.btn') as HTMLButtonElement;
 
     expect(inputEl?.value?.length).toEqual(0);

@@ -25,7 +25,7 @@ import rootReducer from './state/rootReducer';
     StoreModule.forRoot(rootReducer),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
-      //logOnly: !isDevMode(), // Restrict extension to log-only mode
+      logOnly: !isDevMode(), // Restrict extension to log-only mode
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
   ],
