@@ -12,9 +12,10 @@ import { ChatComponent } from './chat/chat.component';
 
 import { StoreModule } from '@ngrx/store';
 import rootReducer from './state/rootReducer';
+import { UnitTestComponent } from './unit-test/unit-test.component';
 
 @NgModule({
-  declarations: [AppComponent, ChatComponent],
+  declarations: [AppComponent, ChatComponent, UnitTestComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -25,7 +26,7 @@ import rootReducer from './state/rootReducer';
     StoreModule.forRoot(rootReducer),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
-      logOnly: !isDevMode(), // Restrict extension to log-only mode
+      //logOnly: !isDevMode(), // Restrict extension to log-only mode
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
   ],
